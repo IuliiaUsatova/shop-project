@@ -12,6 +12,7 @@ window.onload = () => {
     const hiddenBlock = document.getElementsByClassName("category__hidden__content");
     const searchTitle = document.getElementsByClassName('search__title')[0];
     const itemImages = document.getElementsByClassName('item__image');
+    const headerBlockTitle = document.getElementsByClassName('header-block_title');
 
     for (let i = 0; i < clickIcon.length; i++) {
         clickIcon[i].addEventListener("click", () => {
@@ -27,13 +28,34 @@ window.onload = () => {
             searchTitle.innerText = `All items for category ${categoryItem[i].innerText}`
         })
     }
-
+    for (const header of headerBlockTitle) {
+        const text = header.innerText
+        header.addEventListener('click', () => {
+            location.assign(`${text}.html`);
+        })
+    }
     // CORS
     // Обменивание ресурсов между сайтами. Безопастное обменивание.
 };
+//Про промисы:
+// Promise, fetch(), statuses of Promise, methods Promise
+// Заказ - запрос
+// Подарок - данные в обертке
+
+// fetch () -> 2 arguments; 1 -> стринг (URL), 2 -> настройки запроса : Promise<any>
+// Pending, Fulfilled, Rejected, Settled
+// Response, .status -> 100, 200, 300, 400, 500
+// then(), catch(), finally(), all(), race()
+// then() -> 2 arguments; 1 -> callback success, 2 -> callback failed
+// catch() -> 1 argument; callback no success
+// finally() -> argument; callback anytime
+// all() -> 1 argument; array of requests
+// race() -> 1 argument; array of requests -> 1 Promise
+// 1 req -> small data, 2 req -> medium data, 3 req -> hard data
 
 // где classList - это класс, который содержит все массивы  
 
+//Про асинхронность
 // Asynchronous functions (async / await)
 
 async function showItemsByCategory (categoryItem, itemImages) {

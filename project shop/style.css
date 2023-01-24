@@ -245,3 +245,11 @@ display: flex;
 .searchTitle{
     
 }
+
+.item__image__block {
+    margin-bottom: 10px;
+}
+.item__image {
+    width: 150px;
+    height: 180px;
+}

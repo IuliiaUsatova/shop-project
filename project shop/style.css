@@ -242,14 +242,45 @@ display: flex;
     /* чтобы точка меняла цвет на черный*/
     background-color: black;
 }
-.searchTitle{
+
+.searchTitle {
     
 }
 
 .item__image__block {
     margin-bottom: 10px;
 }
+
 .item__image {
     width: 150px;
     height: 180px;
+}
+.search__block {
+    position: relative;
+}
+.search__dropdown {
+    /* //говорим что он первый выйдет на экран */
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    background-color: gray;
+    padding-left: 30px;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.search__dropdown__text {
+    padding: 15px 0 15px 30px;
+    margin: 0;
+    font-family: "Gupter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+}
+/* чтобы текст при наведении менял цвет в инпуте */
+.search__dropdown__text:hover {
+    background-color: #1E1E1E;
+    cursor: pointer;
 }

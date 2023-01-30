@@ -1,286 +1,448 @@
 /* делаем сброс настроек в body */
 * {
-    /* Чтобы не менять ширину и высоту всех дивов, если этого не сделать
+  /* Чтобы не менять ширину и высоту всех дивов, если этого не сделать
     тогда заданная высота всех блоков будет автоматичсеки увеличиваться на 
     задданные пэддинги дополнительно к заданным высоте и ширине, это важно*/
-    /* Применяем это свойство ко всем блокам в проекте */
-    box-sizing: border-box;
+  /* Применяем это свойство ко всем блокам в проекте */
+  box-sizing: border-box;
 }
 
 ul {
-    /* чистим у всех Лишек точки */
-    list-style-type: none;
-    padding: 0;
+  /* чистим у всех Лишек точки */
+  list-style-type: none;
+  padding: 0;
 }
 
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .header-block {
-    background-color: #274071;
-    /* где 0.25 это прозрачность в тени */
-    box-shadow: 0px 4px 9px 6px rgba(0, 0, 0, 0.25);
-    /* чтобы расположить все <p> горизонтально: */
-    display: flex;
-    /* далее раскидываем их ближе к центру подальше от краев */
-    justify-content: space-around;
-    /* теперь центруем их: */
-    align-items: center;
-    /* делаем отступы от границ */
-    padding: 20px 0;
-    height: 150px;
+  background-color: #274071;
+  /* где 0.25 это прозрачность в тени */
+  box-shadow: 0px 4px 9px 6px rgba(0, 0, 0, 0.25);
+  /* чтобы расположить все <p> горизонтально: */
+  display: flex;
+  /* далее раскидываем их ближе к центру подальше от краев */
+  justify-content: space-around;
+  /* теперь центруем их: */
+  align-items: center;
+  /* делаем отступы от границ */
+  padding: 20px 0;
+  height: 150px;
 }
 
-.header-block img {
-    /* Задаем лого размеры обращаясь к нему через header  */
-    width: 109px;
-    height: 109px;
+.header-block .logo_image {
+  /* Задаем лого размеры обращаясь к нему через header  */
+  width: 109px;
+  height: 109px;
 }
 
 .header-block_title {
-    /* Обращаемся к <p> через класс и меняем шрифт */
-    font-family: 'Gupter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 46px;
-    color: #FFFFFF;
+  /* Обращаемся к <p> через класс и меняем шрифт */
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: #ffffff;
 }
 
 .body-block {
-    display: flex;
+  display: flex;
 }
 
 .body__category-block {
-    /* задаем нашему лейт бару отступы 68 пикселей слева и справа*/
-    width: 364px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 14px 11px rgba(0, 0, 0, 0.25);
-    /* делаем пэддинг для того чтобы задать границы для наших лишек (А,Б,..) */
-    padding: 22px 35.5px 22px 28px;
+  /* задаем нашему лейт бару отступы 68 пикселей слева и справа*/
+  width: 364px;
+  background: #ffffff;
+  box-shadow: 0px 4px 14px 11px rgba(0, 0, 0, 0.25);
+  /* делаем пэддинг для того чтобы задать границы для наших лишек (А,Б,..) */
+  padding: 22px 35.5px 22px 28px;
 }
 
 .body__category__title {
-    font-family: 'Hurricane';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 75px;
-    line-height: 104px;
-    color: #852020;
-    /* добавляем внешний отступ с учетом внутреннего paddinga уже (68 - 28px) */
-    margin: 0 32.5px 0 40px;
+  font-family: "Hurricane";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 75px;
+  line-height: 104px;
+  color: #852020;
+  /* добавляем внешний отступ с учетом внутреннего paddinga уже (68 - 28px) */
+  margin: 0 32.5px 0 40px;
 }
 
 .category-list_letter {
-    font-family: 'Gupter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 46px;
-    color: #A5A5A5;
-    /* чтобы наши p не сьезжали убераем внешний отступ */
-    margin: 0;
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: #a5a5a5;
+  /* чтобы наши p не сьезжали убераем внешний отступ */
+  margin: 0;
 }
 
 .category-list_breaker {
-    width: 228px;
-    height: 1px;
-    /* делаем границу для нашей линии */
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+  width: 228px;
+  height: 1px;
+  /* делаем границу для нашей линии */
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
 }
 
 .category-list li {
-    /* делаем внешний отступ до других <p> */
-    margin-bottom: 14px;
+  /* делаем внешний отступ до других <p> */
+  margin-bottom: 14px;
 }
 
 .category-list li img {
-    margin-bottom: 3px;
-    cursor: pointer;
+  margin-bottom: 3px;
+  cursor: pointer;
 }
 
 .category-list__content-block {
-    /* каждому li передаем дисплей флекс чтобы расположить все горизонтально: */
-    display: flex;
-    /* Опускаем наши линии */
-    align-items: flex-end;
+  /* каждому li передаем дисплей флекс чтобы расположить все горизонтально: */
+  display: flex;
+  /* Опускаем наши линии */
+  align-items: flex-end;
 }
 
 .category__hidden__content {
-    /* задаем сюда отступы, чтобы иннер подвинуть(родительский элемент) */
-    padding-left: 50px;
-    margin-top: 20px;
-    /* Прячем наш выбор для муж и для жен(делаем логику через JS) */
-    display: none;
+  /* задаем сюда отступы, чтобы иннер подвинуть(родительский элемент) */
+  padding-left: 50px;
+  margin-top: 20px;
+  /* Прячем наш выбор для муж и для жен(делаем логику через JS) */
+  display: none;
 }
 
 .category__hidden__inner {
-    list-style-type: disc;
+  list-style-type: disc;
 }
 
 .category__hidden__inner__item {
-    font-family: 'Hubballi';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 24px;
-    color: #1E1E1E;
+  font-family: "Hubballi";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 24px;
+  color: #1e1e1e;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .rotateArrow {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .clickColor {
-    color: green;
+  color: green;
 }
 
 .body__items-block {
-    padding: 36px 44px 45px 61px;
-    /* задаем блоку всю оставшуюся ширину за вычетом блока категорий */
-    width: calc(100% - 364px);
+  padding: 36px 44px 45px 61px;
+  /* задаем блоку всю оставшуюся ширину за вычетом блока категорий */
+  width: calc(100% - 364px);
 }
 
 .body__item-search__block .search__title {
-    font-family: 'Gupter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 46px;
-    /* identical to box height */
-    text-decoration-line: underline;
-    color: #000000;
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  /* identical to box height */
+  text-decoration-line: underline;
+  color: #000000;
 }
 
-
-.body__item-search__block{
-    display: flex;
-    justify-content: space-between;
-    /* задаем отступ в общем блоке отталкиваясь от самого большого дочернего блока внутри */
-    padding: 31px 36px 32px 63px;
-    align-items: center;
+.body__item-search__block {
+  display: flex;
+  justify-content: space-between;
+  /* задаем отступ в общем блоке отталкиваясь от самого большого дочернего блока внутри */
+  padding: 31px 36px 32px 63px;
+  align-items: center;
 }
-.body__item-search__block .search__input{
-width: 724px;
-height: 60px;
-border-radius: 10px;
-border: none;
-padding: 10px 0px 10px 93px;
-/* Это короткая запись background: #F0F0F0 url(./images/search\ 1.svg) no-repeat 35px 19px / 22px */
-background-color: #F0F0F0;
-background-image: url(./images/search\ 1.svg);
-background-repeat: no-repeat;
-background-position: 35px 19px;
-background-size: 22px;
-/* чтобы текст был одинаков и в поиске и при написании  */
-font-family: 'Gupter';
-font-style: normal;
-font-weight: 400;
-font-size: 30px;
-line-height: 40px;
-
+.body__item-search__block .search__input {
+  width: 724px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 0px 10px 93px;
+  /* Это короткая запись background: #F0F0F0 url(./images/search\ 1.svg) no-repeat 35px 19px / 22px */
+  background-color: #f0f0f0;
+  background-image: url(./images/search\ 1.svg);
+  background-repeat: no-repeat;
+  background-position: 35px 19px;
+  background-size: 22px;
+  /* чтобы текст был одинаков и в поиске и при написании  */
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
 }
-.body__item-search__block .search__input::placeholder{
-    font-family: 'Gupter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 40px;
-    /* identical to box height */
-    letter-spacing: 0.035em;
-    color: #808080; 
+.body__item-search__block .search__input::placeholder {
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  /* identical to box height */
+  letter-spacing: 0.035em;
+  color: #808080;
 }
-.body__breaker{
-    width: 637.01px;
-    height: 0px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    transform: rotate(0.36deg);
+.body__breaker {
+  width: 637.01px;
+  height: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  transform: rotate(0.36deg);
 }
-.body__item-item__block{
-    padding: 45px 36px 7px 30px;
-    /* чтобы сделать сетку для кроссовок делаем дисплей грид */
-    display: grid;
-    /* чтобы по горизонтали были две карты шириной по 50% */
-    grid-template-columns: 1fr 1fr;
-    /* Задаем отступ между картами товара */
-grid-gap: 40px 145px;
-/* Чтобы задать прокрутку без смещения вниз блока, задаем высоту блока и 
+.body__item-item__block {
+  padding: 45px 36px 7px 30px;
+  /* чтобы сделать сетку для кроссовок делаем дисплей грид */
+  display: grid;
+  /* чтобы по горизонтали были две карты шириной по 50% */
+  grid-template-columns: 1fr 1fr;
+  /* Задаем отступ между картами товара */
+  grid-gap: 40px 145px;
+  /* Чтобы задать прокрутку без смещения вниз блока, задаем высоту блока и 
 делаем прокрутку за счет оверфлоу по Y */
-height: 679px;
-overflow-y:scroll ;
-
-
+  height: 679px;
+  overflow-y: scroll;
 }
 .body__item-item__block .shop__item {
-    padding: 36px 81px 19px 30px;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-border-radius: 10px 10px 0px 0px;
+  padding: 36px 81px 19px 30px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 0px 0px;
   /* Чтобы расположить все элементы (фото) вертикально делаем флекс и колумн */
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-.shop__pagination{
-    display: flex;
-    /* задаем расстаяние между элементами(работает только при flex и grid) */
-    gap: 52px;
+.shop__pagination {
+  display: flex;
+  /* задаем расстаяние между элементами(работает только при flex и grid) */
+  gap: 52px;
 }
-.pagination__dot{
-    
-    width: 7px;
-    height: 7px;
-    background-color: #D9D9D9;
-    border-radius: 50%;
+.pagination__dot {
+  width: 7px;
+  height: 7px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
 }
-.activSlide{
-    /* чтобы точка меняла цвет на черный*/
-    background-color: black;
-}
-
-.searchTitle {
-    
+.activSlide {
+  /* чтобы точка меняла цвет на черный*/
+  background-color: black;
 }
 
 .item__image__block {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .item__image {
-    width: 150px;
-    height: 180px;
+  width: 150px;
+  height: 180px;
 }
 .search__block {
-    position: relative;
+  position: relative;
 }
 .search__dropdown {
-    /* //говорим что он первый выйдет на экран */
-    z-index: 1;
-    width: 100%;
-    position: absolute;
-    background-color: gray;
-    padding-left: 30px;
+  /* //говорим что он первый выйдет на экран */
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  background-color: gray;
+  padding-left: 30px;
 }
 .hidden {
   visibility: hidden;
 }
 
 .search__dropdown__text {
-    padding: 15px 0 15px 30px;
-    margin: 0;
-    font-family: "Gupter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 46px;
+  padding: 15px 0 15px 30px;
+  margin: 0;
+  font-family: "Gupter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
 }
 /* чтобы текст при наведении менял цвет в инпуте */
 .search__dropdown__text:hover {
-    background-color: #1E1E1E;
-    cursor: pointer;
+  background-color: #1e1e1e;
+  cursor: pointer;
+}
+
+.burger__modal{
+display: none;
+width: 100vw;
+position: fixed;
+height: 100vh;
+top: 0;
+z-index: 5;
+}
+
+.opacity__background{
+transition: background-color linear .1s;
+position: absolute;
+width: 100%;
+height: 100%;
+z-index: 3;
+}
+
+.toggle__background{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color linear .1s;
+}
+
+.burger__block{
+    z-index: 4;
+    position: absolute;
+    right: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: #274071;
+    box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.25);
+    transition: right linear .1s;
+    padding: 15px;
+
+}
+
+.burger__title::first-letter{
+    font-size: 24px;
+}
+
+.burger__title{
+font-size: 16px;
+color: #f0f0f0;
+margin-bottom: 10px;
+}
+
+.toggle__burger{
+right: 0;
+transition: right linear .1s;
+}
+
+/* при максимальнойй ширине будет след адаптация: */
+@media (max-width: 1680px) {
+  .body__item-search__block {
+    flex-direction: column-reverse;
+  }
+  /* запятую ставим для отдельного класса, между родителем и ребенком запятую не ставим */
+  .search__block,
+  .body__item-search__block .search__input {
+    width: 100%;
+  }
+
+  .body__breaker {
+    /* минусуем 50px слева и справа */
+    width: calc(100% - 100px);
+  }
+}
+
+/* след медиа запрос при максималке 1250 px относится к тексту в хедере
+и к кросовкам */
+@media (max-width: 1250px) {
+  .body__item-item__block {
+    grid-template-columns: 1fr;
+  }
+  .header-block_title {
+    display: none;
+  }
+}
+
+/* следующий медиазапрос для максимального размера
+1024 пикселя */
+@media (max-width: 1024px) {
+  .logo_image {
+    width: 76px;
+    height: 77px;
+  }
+  .profile__icon {
+    display: block;
+    width: 48px;
+    height: 48px;
+  }
+  .tablet_burger {
+    width: 56px;
+    height: 37px;
+    display: block;
+  }
+  .body__category-block {
+    display: none;
+  }
+  .body__items-block {
+    width: 100%;
+    padding: 36px 20px 45px 20px;
+  }
+}
+/* если ширина 1681 px серч блок прыгает вверх
+1250 для айкон 
+1250 для хедер блок текст 
+1024 убирается категории
+
+должно быть 3 медиа запроса
+добавить бургер в профайл */
+
+@media (max-width: 450px) {
+  .mobile_footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #274071;
+    height: 150px;
+    gap: 27px;
+  }
+  .footer__social__logos {
+    display: flex;
+    gap: 23px;
+  }
+  .header-block .logo_image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tablet_burger {
+    width: 41.3px;
+    height: 37px;
+  }
+
+  .profile__icon {
+    display: none;
+  }
+
+  .body__item-item__block .shop__item {
+    padding: 20px;
+  }
+
+  .body__item-search__block {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .body__item-item__block {
+    padding: 10px;
+  }
+  .search__title {
+    display: none;
+  }
+  .body__breaker {
+    display: none;
+  }
+  .body__item-search__block .search__input {
+    height: 34px;
+    font-size: 16px;
+    padding-left: 50px;
+    box-sizing: 18px;
+    background-position: 12px 7px;
+  }
+
+  .body__item-search__block .search__input::placeholder {
+    font-style: 16px;
+  }
 }

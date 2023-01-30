@@ -1,8 +1,8 @@
 const header = {
   headers: {
     "Access-Control-Allow-Methods": "GET,POST,DELETE,PUT",
-    "Access-Control-Allow-Origin": "*",
-  },
+    "Access-Control-Allow-Origin": "*"
+  }
 };
 
 window.onload = () => {
@@ -16,6 +16,28 @@ window.onload = () => {
   const searchInput = document.getElementsByClassName("search__input")[0];
   const hiddenDropdown = document.getElementsByClassName("search__dropdown")[0];
   const dropdownTexts = document.getElementsByClassName("search__dropdown__text");
+//toggle логика
+const opacityBurger = document.getElementsByClassName('opacity__background')[0];
+const burgerBlock = document.getElementsByClassName('burger__block')[0];
+const burgerIcon = document.getElementsByClassName('tablet_burger')[0];
+const burgerModalBlock = document.getElementsByClassName('burger__modal')[0];
+
+
+
+burgerIcon.addEventListener('click', () => {
+  burgerModalBlock.style.display = 'block'
+  setTimeout(() => {
+  opacityBurger.classList.add('toggle__background');
+  burgerBlock.classList.add('toggle__burger');
+  },100);
+})
+opacityBurger.addEventListener('click', () => {
+  opacityBurger.classList.remove('toggle__background');
+  burgerBlock.classList.remove('toggle__burger');
+  setTimeout(() => {
+    burgerModalBlock.style.display = 'none'
+  },100);
+  })
 
   //contains - если есть такой класс то возвращаем true, есни нет - false
   //toggle - если есть класс, то он его добавит или удалит
@@ -33,11 +55,6 @@ window.onload = () => {
 //       hiddenDropdown.classList.add('hidden');
 //     });
 //   }
-
-
-
-
-
   searchInput.addEventListener('focus', () => {
     if (hiddenDropdown.classList.contains('hidden')) {
         hiddenDropdown.classList.remove('hidden')
@@ -46,14 +63,11 @@ window.onload = () => {
 
 for (const text of dropdownTexts) {
     text.addEventListener('click', () => {
+        showItemsByCategory(text, itemImages)
         searchTitle.innerText = `All items for category: ${text.innerText}`
         hiddenDropdown.classList.add('hidden')
     })
 }
-
-
-
-
 
   for (let i = 0; i < clickIcon.length; i++) {
     clickIcon[i].addEventListener("click", () => {
@@ -99,44 +113,15 @@ for (const text of dropdownTexts) {
 
   //Про асинхронность
   // Asynchronous functions (async / await)
-
-  async function showItemsByCategory(categoryItem, itemImages) {
-    // Promise -> then(функция при успешном запросе, при неуспешном), catch(функция), finally(функция)
-    // NO -> fetch().then().catch()
-    // YES -> fetch() async / await
-
-    const res = await (await fetch("https://fakestoreapi.com/products")).json();
-    // 200, 300, 400, 500
-    // 200 -> успешный запрос
-    // 300 -> сайт либо переместили куда-то или удален
-    // 400 -> ошибка со стороны пользователя
-    // 500 -> ошибка со стороны сервера
-
-    // Pending Promise (Pending, Fulfilled, Rejected, Settled)
-    const selectedCategory =
-      categoryItem.innerText === "For men"
-        ? "men's clothing"
-        : "women's clothing";
-    const filteredItems = res.filter(
-      (item) => item.category === selectedCategory
-    );
-    filteredItems.forEach((element, index) => {
-      itemImages[index].setAttribute("src", element.image);
-    });
-  }
-
-  // 2 function -> обработку (не асинхронные)
-  // 1 function -> отвечает за сохранение данных каждые 10 секунд (async)
-  // 1 function -> отвечает за обновление данных каждые 10 секунд (async)
-
-  // NO ASYNC
-  // 1 -> 0sec
-  // 2 -> 0sec
-
-  // ASYNC
-  // 1 -> 0sec
-  // 2 -> 0sec
-
-  // 10 секунд -> 20 sec
-  // 0 секунд -> 10 sec
 };
+
+  async function showItemsByCategory (categoryItem, itemImages) {
+    const selectedCategory = categoryItem.innerText === 'For men' ? "men's clothing" : "women's clothing"
+    const res = await (await fetch('https://fakestoreapi.com/products', header.headers)).json();
+    const filteredItems = res.filter(item => item.category === selectedCategory)
+    console.log(filteredItems);
+    filteredItems.forEach((element, index) => {
+        itemImages[index].setAttribute('src', element.image);
+    })
+}
+

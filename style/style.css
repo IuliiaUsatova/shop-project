@@ -387,7 +387,7 @@ transition: right linear .1s;
 должно быть 3 медиа запроса
 добавить бургер в профайл */
 
-@media (max-width: 450px) {
+@media (min-width: 450px) {
   .mobile_footer {
     display: flex;
     align-items: center;
